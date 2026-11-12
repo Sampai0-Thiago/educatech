@@ -1,6 +1,6 @@
-CREATE DATABASE educatech;
+CREATE DATABASE educatech_tarde;
 
-USE educatech;
+USE educatech_tarde;
 
 CREATE TABLE alunos(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -11,13 +11,15 @@ CREATE TABLE alunos(
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE alunos MODIFY COLUMN telefone INT(11);
+ALTER TABLE alunos MODIFY COLUMN telefone CHAR(11);
+ALTER TABLE alunos MODIFY COLUMN professores CHAR(11);
+
 
 CREATE TABLE IF NOT EXISTS professores(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
-    telefone VARCHAR(11),
+    telefone CHAR(11),
     especialidade VARCHAR(100)
 );
 
